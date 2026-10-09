@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Planto</title>
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="Planto">
+    <meta name="theme-color" content="#2f6f4e">
+
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <header class="header" data-js-header>
+        <div class="header__inner container">
+            <div class="header__top">
+                <a href="index.html" class="header__logo">
+                   Planto.
+                </a>    
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="checkout" data-js-checkout>
+            <form class="checkout__inner container" data-js-checkout-form>
+                <div class="checkout__main">
+                    <h1 class="checkout__title">
+                        Checkout
+                    </h1>
+                    <fieldset class="checkout__details">
+
+                        <legend class="checkout__title h3">Shipping details</legend>
+                        
+                        <div class="checkout__details-grid checkout__grid">
+                            <label for="first-name" class="visually-hidden">First Name</label>
+                            <input type="text" id="first-name" name="firstName" class="checkout__input input" placeholder="First Name" autocomplete="given-name" required>
+
+                            <label for="last-name" class="visually-hidden">Last Name</label>
+                            <input type="text" id="last-name" name="lastName" class="checkout__input input" placeholder="Last Name" autocomplete="family-name" required>
+                            
+                            <label for="email" class="visually-hidden">Email Address</label>
+                            <input type="email" id="email" name="email" class="checkout__input checkout__input--half-full input" placeholder="Email Address" autocomplete="email" required>
+                            
+
+                            <div class="checkout__input checkout__input--half-full checkout__input-group ">
+                                <label for="phone" class="visually-hidden">Phone Number</label>
+                                
+                     
+                                <div class="select input" data-js-select>
+
+                                    <label class="select__label visually-hidden" for="phone-number-prefix" id="phone-number-prefix-label">Phone number prefix</label>
+                                    <select class="select__original-control" id="phone-number-prefix" tabindex="-1" aria-hidden="true" data-js-select-original-control>
+                                        <option value="+7" selected="">+7</option>
+                                        <option value="+1">+1</option>
+                                        <option value="+2">+2</option>
+                                        <option value="+3">+3</option>
+                                    </select>
+
+                                    <div class="select__body">
+                                        <div 
+                                            class="select__button" 
+                                            role="combobox" 
+                                            aria-expanded="false" 
+                                            aria-haspopup="listbox" 
+                                            aria-controls="phone-number-prefix-dropdown" 
+                                            aria-labelledby="phone-number-prefix-label" 
+                                            aria-activedescendant="phone-number-prefix-option-0" 
+                                            aria-hidden="false"
+                                            tabindex="0" 
+                                            data-js-select-button
+                                        >
+                                                +7
+                                        </div>
+
+                                        <div 
+                                            class="select__dropdown transp-background" 
+                                            id="phone-number-prefix-dropdown" 
+                                            role="listbox" 
+                                            aria-labelledby="phone-number-prefix-label" 
+                                            data-js-select-dropdown=>
+                                                <div class="select__option is-selected is-current" id="phone-number-prefix-option-0" role="option" aria-selected="true" data-js-select-option>+7</div>
+                                                <div class="select__option" id="phone-number-prefix-option-1" role="option" aria-selected="false" data-js-select-option>+1</div>
+                                                <div class="select__option" id="phone-number-prefix-option-2" role="option" aria-selected="false" data-js-select-option>+2</div>
+                                                <div class="select__option" id="phone-number-prefix-option-3" role="option" aria-selected="false" data-js-select-option>+3</div>
+                                        </div>
+                                    </div>       
+                                </div>
+
+                                <input 
+                                class="checkout__input input" 
+                                type="tel" id="phone" 
+                                name="phone" 
+                                autocomplete="tel" 
+                                inputmode="tel" 
+                                placeholder="(999) 999 99-99" 
+                                required data-js-input-mask="(000) 000-00-00">
+
+                            </div>
+
+                            <label for="address" class="visually-hidden">Street Address</label>
+                            <input type="text" id="address" name="address" class="checkout__input checkout__input--full input" placeholder="Street Address" autocomplete="street-address" required>
+                            
+                            <label for="city" class="visually-hidden">City</label>
+                            <input type="text" id="city" name="city" class="checkout__input checkout__input--third input" placeholder="City" autocomplete="address-level2" required>
+
+                            <label for="state" class="visually-hidden">State/Province</label>
+                            <input type="text" id="state" name="state" class="checkout__input checkout__input--third input" placeholder="State/Province" autocomplete="address-level1" required>
+
+                            <label for="zip" class="visually-hidden">Zip/Postal Code</label>
+                            <input type="text" id="zip" name="zip" class="checkout__input checkout__input--third input" placeholder="Zip/Postal Code" autocomplete="postal-code" required>
+                        </div>
+
+                        <label class="checkout__details-checkbox-wrapper">
+                            <input type="checkbox" name="billingSameAsShipping" checked>
+                            <div class="checkout__details-checkbox" aria-hidden="true"></div>
+                            <span>Billing is the same as shipping.</span>
+                        </label>
+
+                    </fieldset>
+                    <fieldset class="checkout__payment">
+
+                        <legend class="checkout__title h3">Payment method</legend>
+                        
+                        <div class="checkout__payment-methods transp-background">
+                            <span class="payment-icon">VISA</span>
+                            <span class="payment-icon">MC</span>
+                            <span class="payment-icon">MC</span>
+                            <span class="payment-icon">apple Pay</span>
+                        </div>
+
+                        <div class="checkout__grid">
+                           <label for="card-number" class="visually-hidden">Card number</label>
+                            <input 
+                                type="text" 
+                                id="card-number"
+                                name="cardNumber"
+                                class="checkout__input checkout__input--full input" 
+                                placeholder="Card number" 
+                                autocomplete="cc-number"
+                                inputmode="numeric"
+                                pattern="[\d\s]+"
+                                minlength="13"
+                                maxlength="19"
+                                data-js-input-mask="0000 0000 0000 0000"
+                                required>
+                            
+                            <label for="card-expiry" class="visually-hidden">Expiry date</label>
+                            <input 
+                                type="text" 
+                                id="card-expiry"
+                                name="cardExpiry"
+                                class="checkout__input input" 
+                                placeholder="MM/YY" 
+                                autocomplete="cc-exp"
+                                inputmode="numeric"
+                                data-js-input-mask="00/00"
+                                required>
+                                
+                            <label for="card-cvv" class="visually-hidden">Security code</label>
+                            <input 
+                                type="text" 
+                                id="card-cvv"
+                                name="cardCvv"
+                                class="checkout__input input" 
+                                placeholder="CVV" 
+                                autocomplete="cc-csc"
+                                inputmode="numeric"
+                                minlength="3"
+                                maxlength="4"
+                                data-js-input-mask="000"
+                                required>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <aside class="checkout__summary transp-background">
+
+                    <h2 class="checkout__summary-title h3 title-h3-vect">
+                        Order summary
+                    </h2>
+
+                    <div class="checkout__summary-block" data-js-checkout-order-summary>
+                        <div class="checkout__summary-cart">
+                            <div class="checkout__summary-item">  
+                                <img src="img/best/1.webp" alt="Diffenbachia" class="checkout__summary-item-image">
+                                <div class="checkout__summary-item-details">
+                                    <h3 class="checkout__summary-item-name">Diffenbachia</h3>
+                                    <span class="checkout__summary-item-price">30$</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="checkout__summary-totals">
+                            <div class="checkout__summary-total-row">
+                                <span class="checkout__summary-total-label">Subtotal</span>
+                                <span class="checkout__summary-total-value">60$</span>
+                            </div>
+                            <div class="checkout__summary-total-row">
+                                <span class="checkout__summary-total-label">Shipping</span>
+                                <span class="checkout__summary-total-value">5$</span>
+                            </div>
+                            
+                            <div class="checkout__summary-total-row checkout__summary-total-row--final">
+                                <span class="checkout__summary-total-label">Total</span>
+                                <span class="checkout__summary-total-value">60$</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="checkout__summary-place-order">
+                        <div class="checkout__summary-promo-inner">
+                            <label for="promo-code" class="checkout__summary-promo-label">APPLY PROMO CODE</label>
+                            <input type="text" id="promo-code" class="checkout__summary-promo-code input" aria-label="Promo code">
+                        </div>
+                        
+                        <button type="submit" class="checkout__summary-button" data-js-checkout-order-submit>Place order</button>
+                    </div>
+
+                </aside>
+            </form>     
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__top">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <img src="./img/logo-footer.png" alt="">
+                        Planto.
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+              
+                <div class="footer__column">
+                    <div class="footer__column-title">For Every Update.</div>
+                    <form class="footer__email">
+                        <input class="footer__email-input" placeholder="Enter Email" type="email">
+                        <button class="footer__email-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__cpr">
+                planto © all right reserve
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

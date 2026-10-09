@@ -1,0 +1,228 @@
+@use '../helpers' as *;
+
+.search {
+  position: relative;
+  
+  &__button{
+    width: rem(36);
+    height: rem(36);
+    padding: rem(5);
+    background-color: transparent;   
+    border-radius:rem(8);
+    border: none;
+    transition-duration: var(--transition-duration);
+    color: var(--color-white-transparent);
+    display: inline-flex;
+
+    @include hover{
+        background: rgba(255, 255, 255, 0.103);;
+        backdrop-filter: blur(40px);           
+    }
+
+
+    &-icon {
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &-arrow {
+          opacity: 0;
+          transition: opacity 0.2s ease, transform 0.3s ease;
+          transform-origin: 50%;
+          transform:scale(0.4);
+        }
+
+        &-handle {
+            transform-origin: 17px 17px;
+            transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+        
+        
+        &-glass {
+        transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+     
+    
+    
+    }
+  
+    &.active &-icon{
+   
+      &-handle {
+        transform: scale(0.4);
+        transform-origin: 17px 17px;
+        opacity: 0;
+      }
+    
+      
+      &-glass {
+        opacity: 0;
+        transform: scale(0.4);
+      }
+
+    
+      
+      &-arrow{
+        opacity: 1;
+        transform:scale(1);
+      }
+    }
+  }
+  
+  &__overlay {
+    position: absolute;
+    top: -10px;
+    right: 50px;
+    z-index: 12;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.38s ease, visibility 0s linear 0.38s;
+
+    
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.38s ease, visibility 0s linear 0s;
+        
+        .search__panel {
+          transform: scale(1) translateX(0);
+          opacity: 1;
+        }
+    }
+
+    @include mobile{
+      right: 50px;
+    }
+  }
+  
+
+  &__panel {
+    position: relative;
+    width: fluid(400, 230);
+    border-radius: rem(16);
+    background-color: var(--color-grey-background);
+    padding: 0 5px;
+ 
+    transform: scale(0.92) translateX(30px);
+    opacity: 0;
+    transition: all 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    &__field {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+
+      & input{
+        outline: none;
+        width: 100%;
+        height: 56px;
+        padding: rem(10) rem(20);
+        font-size: 15px;
+        background: var(--color-black-08);
+        border: var(--border);
+        border-radius:var(--border-radius-s);
+        color: white;
+        transition: var(--transition-duration);
+
+        &:hover,  &:focus{
+          background: var(--color-black-10);
+        }
+
+        @include mobile{
+          padding: rem(10) rem(5);
+        }
+
+        &::-webkit-clear-button,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration {
+          display: none;
+        }
+    
+      }
+    }
+
+   &__suggestions {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.103);;
+      backdrop-filter: blur(40px);     
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      max-height: 220px;
+      overflow-y: auto;
+      z-index: 100;
+      color: var(--color-white);
+
+      &-item {
+        padding: 10px 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+
+        &:hover, &.is-current{
+          background-color: var(--color-white-background);
+        }
+        
+    }
+}
+
+
+
+    &__clear-button{
+      position: relative;
+      border: none;
+      padding: rem(10);
+      background-color: transparent;
+      color:var(--color-white-transparent) ;
+      margin-right: 10px;
+      
+
+      &::after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: var(--color-white-background);
+        right: -10px;
+        top: 0;
+      }
+
+     
+    }
+
+    &__search-button {
+      background-color: transparent;
+      border: none;
+      border-radius: rem(8);
+      padding: rem(5);
+      color: var(--color-white-transparent);
+      
+      
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  
+}
+
+
+
+
+
+
+

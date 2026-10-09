@@ -1,0 +1,28 @@
+@use "../helpers" as *;
+
+:root{
+    --font-family-base:'Inter', sans-serif;
+   
+    --container-width:#{rem(1600)};
+    --container-padding-x:#{rem(16)};
+
+    --section-inner-gap:#{fluid(100, 30)};
+
+
+    --color-white:#ffff;
+    --color-white-transparent:rgba(255, 255, 255,75%);
+    --color-white-background:rgba(255, 255, 255, 0.205);
+    --color-grey-background:rgb(71, 77, 70);
+
+    --color-not-active-btn-background:rgb(122, 122, 122);
+    --color-not-active-btn-text:rgb(97, 97, 97);
+
+    --border-white:#{rem(2)} solid var(--color-white-transparent);
+
+
+    --transition-duration:0.2s;
+
+    @include laptop{
+        --container-width:#{rem(1280)};
+    }
+}

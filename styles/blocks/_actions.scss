@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.actions{
+    &__quantity-controls{
+        display: flex;
+        align-items: center;
+        gap: rem(7);
+        color: var(--color-white-transparent);
+        font-size: fluid(35,25);
+       
+        
+        &--cart{
+            font-size: inherit;
+            gap: rem(5);
+        }
+
+        &-button{  
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            border-radius: rem(4);
+            color: var(--color-white-transparent);
+            
+            @include hover{
+                color: var(--color-white);
+            }
+        }
+
+   
+    }
+}
+

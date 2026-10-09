@@ -1,0 +1,20 @@
+@use '../helpers' as *;
+
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(10);
+    background-color: transparent;
+    border: var(--border-white);
+    border-radius: 30px;
+    color: var(--color-white);
+
+    &::placeholder{
+        color: var(--color-white-transparent);
+
+        @include tablet{
+            font-size: rem(16);
+        }
+    }
+}

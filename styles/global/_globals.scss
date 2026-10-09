@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+html{
+    scroll-padding-top: rem(200);
+    scroll-behavior: smooth;
+    
+    height: max-content;
+}
+
+body{
+    @include fluid-text(24,16); //font-sz
+
+    background-image: linear-gradient(to bottom, #161c12 0%, #475d3b 50%, #161c12 100%);
+    background-repeat: no-repeat;
+
+    font-family: var(--font-family-base);
+    
+
+    color: var(--color-white);
+    
+    min-height: 100vh;
+
+    &[data-js-shop]{
+        display: grid;
+        gap: fluid(170, 85);
+    }
+}
+main{
+    flex-grow: 1;
+    display: grid;
+    gap: fluid(150, 75);
+}
+
+a, 
+button, 
+label, 
+input, 
+textarea, 
+select, 
+svg *{
+    transition-duration: var(--transition-duration);
+}
+h1, .h1
+h2, .h2
+{
+    font-weight: 600;
+}
+h1, .h1{
+    color: var(--color-white-transparent);
+    @include fluid-text(118,60); 
+}
+h2, .h2{
+    @include fluid-text(55,30);    
+    text-align: center;
+}
+h3, .h3{
+    @include fluid-text(38,20);    
+}
+:focus-visible{
+    outline: rem(2) dashed white;
+    outline-offset: rem(4);
+    text-decoration: 0s !important;
+}

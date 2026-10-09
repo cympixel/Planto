@@ -1,0 +1,247 @@
+@use '../helpers' as *;
+
+.checkout{
+    &__inner{
+        padding-block: rem(20) fluid(90, 30);
+        display: grid;
+        grid-template-columns: minmax(rem(350), 1fr) minmax(rem(280), rem(400)); 
+        gap: fluid(100, 50);
+
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+        
+    }
+
+    &__grid{ 
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: rem(15);
+    }
+    &__main{
+        display: grid;
+        gap: fluid(25, 20);
+    }
+    &__title{
+        text-align: start;
+        text-transform: uppercase;
+        padding-bottom: rem(5);
+        font-weight: 600;
+    }
+    &__input{
+        width: 100%;
+        grid-column: span 3;
+
+        &--full{
+            grid-column: span 6;
+        }
+        &--large {
+            grid-column: span 4;
+        }
+        &--third{
+            grid-column: span 2;
+            
+            @include tablet{
+                grid-column: span 3; 
+
+                
+                &:last-child {
+                    grid-column: span 6; 
+                }
+            }
+        }
+        &--quarter{
+            grid-column: span 1;
+        }
+        &--half-full{
+            grid-column: span 3;
+
+            @include tablet{
+                grid-column: span 6;
+            }
+        }
+
+        &-group{
+            display: flex;
+            align-items: center;
+            gap: rem(7);
+            
+        }
+    }
+    &__details{
+        display: grid;
+        gap: rem(15);
+
+        
+        &-checkbox-wrapper{
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
+            input{
+                display: none;
+
+                &:checked + .checkout__details-checkbox {
+
+                    border-color: var(--color-white);
+                    transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+
+                    &::before{
+                        color: var(--color-white);
+                    }
+                }
+            }
+
+            &:hover .checkout__details-checkbox {
+                background-color: var(--color-white-background);
+                transform: scale(1.05);
+            }
+        }
+        &-checkbox{
+            width: 24px;
+            height: 24px;
+            border: var(--border-white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+            transform-style: preserve-3d;
+
+            &::before {
+                content: "\2713";
+                font-size: 16px;
+                color: transparent;
+                transition: color 0.3s, transform 0.3s
+            }
+        }
+    }
+    &__payment{
+        display: grid;
+        gap: rem(15);
+
+        &-methods{
+            justify-self: start;
+            display: inline-flex;
+            align-items: center;
+            gap: rem(7);
+            padding: rem(7);       
+            border-radius: rem(12); 
+            border: 0.5px solid var(--color-white-transparent);
+        }
+    }
+
+    &__summary{
+        display: grid;
+        
+        gap: fluid(30, 15);
+        padding: rem(25);
+        border-radius: rem(35);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.205);
+        align-self: start;
+
+        @include laptop{
+            padding: rem(25) rem(15) rem(15) rem(15);
+        }
+
+        @include tablet{
+            gap: rem(15);
+        }
+
+        &-title{
+           align-self: start;
+           margin-bottom: rem(20);
+           text-transform: uppercase;
+           font-weight: 600;
+        }
+        &-block{
+           display: grid;  
+            gap: fluid(25, 15);
+        }
+
+        &-cart{
+            display: grid;
+            gap: rem(20);
+        }
+        &-item{
+            display: flex;
+            align-items: center;
+            gap: rem(15);
+
+            &-image{     
+                background-color: var(--color-white-background);
+                border-radius: rem(25);
+                width: 100px;
+                height: 100px;
+            }
+
+            &-details{
+                display: grid;
+                gap: rem(10);
+            }
+            &-name{
+                font-size: inherit;
+                font-weight: 400;
+            }
+            &-price{
+                font-weight: 600;
+            }
+        }
+
+        &-totals{
+            display: grid;
+            gap: rem(10);
+        }
+        &-total{
+            &-row{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &--final{
+                    padding-top: rem(10);
+                    border-top: 1px solid var(--color-white-background);
+
+                    color: rgb(160, 227, 106);
+                    text-shadow: 
+                    0 0 5px rgba(168, 207, 161, 0.8),   /* Внутренний яркий контур */
+                    0 0 15px rgba(168, 207, 161, 0.5),  /* Среднее размытие */
+                    0 0 30px rgba(168, 207, 161, 0.3);  /* Широкий, мягкий ореол */
+                            }
+            }
+        }
+
+        &-place-order{
+            display: grid;
+            gap: rem(30); 
+
+            @include tablet{
+                gap: rem(10);
+            }
+        }
+        &-promo-inner{
+            display: grid;
+            gap: rem(10); 
+        }   
+        &-button{
+            padding: rem(15) rem(30);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            background-color: transparent;
+            border: 3px solid rgb(153, 190, 123);
+            color: var(--color-white-transparent);
+
+            @include tablet{
+                padding: rem(10) rem(25);
+            }
+
+            &:hover{
+                background-color: var(--color-white-background);
+                box-shadow: 0px 5px 25px rgb(153, 190, 123);
+                
+            }
+        }
+    }
+}

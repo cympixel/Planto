@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planto | Houseplants, succulents, rare species, and garden plants.</title>
+    <meta name="description" content="Houseplants, succulents, rare species, and garden plants. Wide selection, healthy specimens, care advice included.">
+
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="Planto" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cympixel.github.io/Planto/">
+    <meta property="og:title" content="Planto | houseplants, succulents, rare species, and garden plants.">
+    <meta property="og:description" content="Houseplants, succulents, rare species, and garden plants. Wide selection, healthy specimens, care advice included.">
+    <meta property="og:image" content="https://cympixel.github.io/Planto/img/favicon.png">
+    
+    <meta name="theme-color" content="#2f6f4e">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+        />
+    <link rel="stylesheet" href="./styles/main.css">
+    
+</head>
+<body data-js-shop>
+    <header class="header" data-js-header>
+        <div class="header__inner container">
+            <div class="header__top">
+                <a href="/Planto/" class="header__logo">
+                   Planto.
+                </a>
+                <nav class="header__menu" data-js-navigation>
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="#Trendy" class="header__link">Trendy Plants</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#catalog" class="header__link">Catalog</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#Reviews" class="header__link">Reviews</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__inter">
+                    
+                    <div class='search header__search' data-js-search>
+
+                        <button 
+                            class="search__button" 
+                            aria-label="Search" 
+                            type="button" 
+                            data-js-search-button
+                        >
+                                <svg class="search__button-icon" viewBox="0 0 26 26" width="26" height="26">
+                            
+                                    <line class="search__button-icon-handle" x1="18" y1="18" x2="24" y2="24 " stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                
+                                    <circle class="search__button-icon-glass" cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+
+                                    <polyline 
+                                        class="search__button-icon-arrow"
+                                        points="9,5 17,13 9,21" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-width="1.5" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"
+                                    />
+                                    
+                                </svg>
+                        </button>
+
+                    
+                        <div class="search__overlay" data-js-search-overlay>
+                            <search class="search__panel" role="search">
+                            <div class="search__field" data-js-search-field>
+                                    <input
+                                    type="search"
+                                    id="search-field"
+                                    placeholder=""
+                                    required
+                                    autofocus
+                                    aria-label="Search field"
+                                    autocomplete="off"
+                                    role="combobox" 
+                                    aria-autocomplete="list" 
+                                    aria-controls="search-suggestions" 
+                                    aria-expanded="false"
+
+                                    data-js-shop-input
+                                    />
+
+                                    <div class="search__suggestions hide" id="search-suggestions" role="listbox" data-js-shop-suggestions></div>
+                                    
+                                    <button 
+                                        class="search__clear-button" 
+                                        title="Clear" 
+                                        aria-label="Clear the input field" 
+                                        type="button" 
+                                        data-js-shop-clear-button
+                                    >
+                                        <svg class="search__button-icon" viewBox="0 0 12 12" width="12" height="12">                                
+                                            <line class="search__button-icon-x1" x1="1"  y1="1"  x2="11" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                            <line class="search__button-icon-x2" x1="1"  y1="11" x2="11" y2="1"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                    <button 
+                                        class="search__search-button" 
+                                        title="Search" 
+                                        aria-label="Search" 
+                                        data-js-shop-search-button
+                                        type="button"
+                                    >
+                                        <svg class="search__button-icon" viewBox="0 0 26 26" width="26" height="26">                   
+                                            <line class="search__button-icon-handle" x1="18" y1="18" x2="24" y2="24 " stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                
+                                            <circle class="search__button-icon-glass" cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </button>    
+                            </div>
+                        </search>
+                        </div>
+                    </div>
+
+                    <div class="header__cart cart" data-js-shop-cart>
+                        <button type="button" class="cart__button button" data-js-shop-cart-button aria-expanded="false">
+                            <img src="./img/cart.svg" alt="cart">
+                        </button>
+                        <div class="cart__panel">
+                            
+                            <div class="cart__list" data-js-shop-cart-list>
+
+                            </div>
+                            <button class="cart__clear-btn" data-js-shop-clear-cart>Clear</button>
+                            <div class="cart__total" >
+                                <span class="cart__total-price h3" data-js-shop-total-price>
+                                    
+                                </span>
+                                <a href='checkout.html' class="cart__checkout" data-js-shop-checkout-button>
+                                    Checkout
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cart__counter">
+                            <span class="cart__counter-value" data-js-shop-cart-counter>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__hero" data-js-shop-hero>
+                    <div class="header__title">
+                        <h1>Choose your Planto. </h1>
+                    </div>
+                    <div class="header__slider" data-js-slider>
+                        <div class="swiper" data-js-slider-swiper>
+                            
+                            <div class="swiper-wrapper">
+                               
+                                <div class="swiper-slide">
+                                    <div class="header__slider-card product-card product-card--slider transp-background" data-js-shop-product data-js-shop-product-id="1">
+                                        <picture>
+                                            <source srcset="" type="image/webp">
+                                                            
+                                            <img class="product-card__img" src="" width="600" height="500" fetchpriority="high">
+                                        </picture>
+                                        <div class="product-card__info">
+                                            
+                                            <h3>
+                                                <span data-js-shop-slider-name></span>
+                                                <div class="product-card__button-next" data-js-slider-next-button>
+                                                    <img src="./img/right-arrow.svg" alt="next">
+                                                </div>
+                                            </h3>
+                                            <a href="#" class="button button--wide">More info...</a>
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="header__slider-card product-card product-card--slider transp-background" data-js-shop-product data-js-shop-product-id="3">
+                                         <picture>
+                                            <source srcset="" type="image/webp">
+                                                            
+                                            <img class="product-card__img" src="" >
+                                        </picture>
+                                        <div class="product-card__info">
+                                            
+                                            <h3>
+                                                <span data-js-shop-slider-name></span>
+                                                <div class="product-card__button-next" data-js-slider-next-button>
+                                                    <img src="./img/right-arrow.svg" alt="next">
+                                                </div>
+                                            </h3>
+                                            <a href="#" class="button button--wide">More info...</a>
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="header__slider-card product-card product-card--slider transp-background" data-js-shop-product data-js-shop-product-id="4">
+                                        <picture>
+                                            <source srcset="" type="image/webp">
+                                                            
+                                            <img class="product-card__img" src="" >
+                                        </picture>
+                                        <div class="product-card__info">          
+                                            <h3>
+                                                <span data-js-shop-slider-name></span>
+                                                <div class="product-card__button-next" data-js-slider-next-button>
+                                                    <img src="./img/right-arrow.svg" alt="next">
+                                                </div>
+                                            </h3>
+                                            <a href="#" class="button button--wide">More info...</a>
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="header__slider-card product-card product-card--slider transp-background" data-js-shop-product data-js-shop-product-id="5">
+                                         <picture>
+                                            <source srcset="" type="image/webp">
+                                                            
+                                            <img class="product-card__img" src="" >
+                                        </picture>
+                                        <div class="product-card__info">
+                                            
+                                            <h3>
+                                                <span data-js-shop-slider-name></span>
+                                                <div class="product-card__button-next" data-js-slider-next-button>
+                                                    <img src="./img/right-arrow.svg" alt="next">
+                                                </div>
+                                            </h3>
+                                            <a href="#" class="button button--wide">More info...</a>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="header__slider-card product-card product-card--slider transp-background" data-js-shop-product data-js-shop-product-id="2">
+                                         <picture>
+                                            <source srcset="" type="image/webp">
+                                                            
+                                            <img class="product-card__img" src="" >
+                                        </picture>
+                                        <div class="product-card__info">
+                                            
+                                            <h3>
+                                                <span data-js-shop-slider-name></span>
+                                                <div class="product-card__button-next" data-js-slider-next-button>
+                                                    <img src="./img/right-arrow.svg" alt="next">
+                                                </div>
+                                            </h3>
+                                            <a href="#" class="button button--wide">More info...</a>
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination" data-js-slider-pagination></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="header__trendy" id="Trendy" data-js-shop-trendy>
+                    <h2 class="header__trendy-title title-h2-vect">
+                        Our Trendy plants
+                    </h2>
+                    <div class="header__trendy-card transp-background" data-js-shop-product data-js-shop-product-id="6">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="header__trendy-img" src="" loading="lazy">
+                        </picture>
+                        <div class="header__trendy-card-info">
+                            <h3></h3>
+                            <p></p>
+                            <div class="header__trendy-card-price"></div>
+                            <div class="header__trendy-card-btns">
+                                <a href="#" class="header__explore button button--wide">
+                                    More info...
+                                </a> 
+                                <div class="header__trendy-actions actions" data-js-shop-actions-id="6">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="6">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__trendy-card header__trendy-card--reverse transp-background" data-js-shop-product data-js-shop-product-id="2">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="header__trendy-img" src="" loading="lazy">
+                        </picture>
+                        <div class="header__trendy-card-info">
+                            <h3></h3>
+                            <p></p>
+                            <div class="header__trendy-card-price"></div>
+                            <div class="header__trendy-card-btns">
+                                <a href="#" class="header__explore button button--wide">
+                                More info...
+                                </a>
+                                <div class="header__trendy-actions actions" data-js-shop-actions-id="2">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="2">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <main class="main" data-js-shop-page>
+        <section class="catalog" aria-labelledby="catalog-title" id="catalog">
+            <div class="catalog__inner container">
+                <h2 class="catalog__title title-h2-vect" id="catalog-title">
+                   Catalog
+                </h2>
+                <div class="catalog__grid">
+
+                    <div class="product-card product-card--catalog transp-background" id="Diffenbachia" data-js-shop-product data-js-shop-product-id="1">
+                            <picture>
+                                <source srcset="" type="image/webp">
+                                                
+                                <img class="product-card__img" src="" fetchpriority="high">
+                            </picture>
+                            <div class="product-card__info product-card__info--catalog">
+                                <h3></h3>
+                                <p></p>
+                                <div class="product-card__bottom">
+                                    <div class="product-card__price"></div>
+                                    <div class="product-card__actions actions" data-js-shop-actions-id="1">
+                                        <button class="actions__cart-button button" data-js-shop-product-id="1">
+                                            <img src="./img/cart-white.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>    
+                    </div>
+                               
+                             
+                    <div class="product-card product-card--catalog transp-background" id="Cactus" data-js-shop-product data-js-shop-product-id="3">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="product-card__img" src="" >
+                        </picture>
+                        <div class="product-card__info product-card__info--catalog">
+                            <h3></h3>
+                            <p></p>
+                            <div class="product-card__bottom">
+                                    <div class="product-card__price"></div>
+                                     <div class="product-card__actions actions" data-js-shop-actions-id="3">
+                                        <button class="actions__cart-button button" data-js-shop-product-id="3">
+                                            <img src="./img/cart-white.svg" alt="">
+                                        </button>
+                                    </div>
+                            </div>
+                        </div>            
+                    </div>
+
+               
+                    <div class="product-card product-card--catalog transp-background" id="Monstera" data-js-shop-product data-js-shop-product-id="4">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="product-card__img" src="" >
+                        </picture>
+                        <div class="product-card__info product-card__info--catalog">
+                            <h3></h3>
+                            <p></p>
+                            <div class="product-card__bottom">
+                                <div class="product-card__price"></div>
+                                 <div class="product-card__actions actions" data-js-shop-actions-id="4">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="4">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                             
+                                
+                    <div class="product-card product-card--catalog transp-background" id="Banana-palm-tree" data-js-shop-product data-js-shop-product-id="5">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="product-card__img" src="" >
+                        </picture>
+                        <div class="product-card__info product-card__info--catalog">
+                            <h3></h3>
+                            <p></p>
+                            <div class="product-card__bottom">
+                                <div class="product-card__price"></div>
+                                  <div class="product-card__actions actions" data-js-shop-actions-id="5">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="5">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+
+                            
+                    <div class="product-card product-card--catalog transp-background" id="Haworthia" data-js-shop-product data-js-shop-product-id="2">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="product-card__img" src="" >
+                        </picture>
+                        <div class="product-card__info product-card__info--catalog">
+                            <h3></h3>
+                            <p></p>
+                            <div class="product-card__bottom">
+                                <div class="product-card__price"></div>
+                                 <div class="product-card__actions actions" data-js-shop-actions-id="2">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="2">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+
+                                
+                    <div class="product-card product-card--catalog transp-background" id="Hosta" data-js-shop-product data-js-shop-product-id="6">
+                        <picture>
+                            <source srcset="" type="image/webp">
+                                            
+                            <img class="product-card__img" src="" >
+                        </picture>
+                        <div class="product-card__info product-card__info--catalog">
+                            <h3></h3>
+                            <p></p>
+                            <div class="product-card__bottom">
+                                <div class="product-card__price"></div>
+                                <div class="product-card__actions actions" data-js-shop-actions-id="6">
+                                    <button class="actions__cart-button button" data-js-shop-product-id="6">
+                                        <img src="./img/cart-white.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>      
+                    </div>
+                                
+                </div>
+            </div>
+        </section>
+        <section class="review" aria-labelledby="reviews-title" id="Reviews"> 
+            <div class="review__inner container">
+                <h2 class="review__title title-h2-vect" id="reviews-title">
+                    Customer Review
+                </h2>
+                <div class="review__row">
+                    <div class="review__card transp-background">
+                        <div class="review__card-top">
+                            <img src="./img/review/1.png" alt="">
+                            <div class="review__card-name">
+                                <h3>Maxn Raval</h3>
+                                <div class="stars">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star star-half"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review__card-text-container">
+                            <input class="review__card-checkbox" type="checkbox" id="1-text">
+                            <p class="review__card-text">
+                                I bought a hosta from this shop last week, and I’m absolutely in love with it! 
+                                The leaves are so lush and vibrant, and the plant arrived in perfect condition. 
+                                Great selection and very helpful staff — will definitely order again!
+                            </p>
+                            <label for="1-text" class="review__card-more-btn">Show more</label>
+                        </div>
+                    </div>
+                    <div class="review__card transp-background">
+                        <div class="review__card-top">
+                            <img src="./img/review/2.png" alt="">
+                            <div class="review__card-name">
+                                <h3>
+                                   Lii thakur   
+                                </h3>
+                                <div class="stars">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star star-half"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review__card-text-container">
+                            <input class="review__card-checkbox" type="checkbox" id="2-text">
+                            <p class="review__card-text">
+                                Ordered a few different houseplants, including a haworthia and a small monstera. 
+                                Everything was carefully packed, and all the plants look healthy. 
+                                The care tips they included were super useful — exactly what a beginner like me needs. 
+                                Highly recommend!
+                            </p>
+                            <label for="2-text" class="review__card-more-btn">Show more</label>
+                        </div>
+                    </div>
+                    <div class="review__card transp-background">
+                        <div class="review__card-top">
+                            <img src="./img/review/3.png" alt="">
+                            <div class="review__card-name">
+                                <h3>
+                                    venely k     
+                                </h3>
+                                <div class="stars">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star star-half"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review__card-text-container">
+                            <input class="review__card-checkbox" type="checkbox" id="3-text">
+                            <p class="review__card-text">
+                                I’ve been buying plants here for months now, and every time the quality is outstanding. 
+                                Recently got a dieffenbachia, and it’s growing like crazy. 
+                                Love the variety they offer and how responsive their customer service is. 
+                                This is my go‑to plant store!
+                            </p>
+                            <label for="3-text" class="review__card-more-btn">Show more</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="best" aria-labelledby="best-title" id="BestO2">
+            <div class="best__inner container">
+                <h2 class="title-h2-vect" id="best-title">Our Best o2</h2>
+                <div class="best__slider" data-js-slider>
+                        <div class="swiper-2" data-js-slider-swiper>
+                            <div class="swiper-wrapper">
+                               
+                                <div class="swiper-slide">
+                                   <div class="best__slide transp-background">
+                                        <picture>
+                                            <source srcset="./img/product-images/diffenbahia.webp" type="image/webp">
+                                                            
+                                            <img class="best__img" src="./img/product-images/diffenbahia.png" loading="lazy">
+                                        </picture>
+                                            <div class="best__info">
+                                                <p><b>Diffenbachia</b> uses the standard C3 photosynthesis pathway, which is typical for most plants. In this process, carbon dioxide fixation and subsequent reactions occur simultaneously in the same cells during daylight hours. Diffenbachia’s large leaves provide a substantial stomatal surface area, boosting gas exchange and photosynthetic rate — but also increasing water loss. </p>
+                                                <div class="best__info-btns">
+                                                    <a href="#Diffenbachia" class="best__info-explore button button--wide">Show... </a>
+                                                    <div class="best__info-nav">
+                                                        <div class="best__info-prev" data-js-slider-previous-button>
+                                                            
+                                                        </div>
+                                                        <div class="best__info-next" data-js-slider-next-button>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                   </div>
+                                </div>
+                                 <div class="swiper-slide">
+                                   <div class="best__slide transp-background">
+                                            <picture>
+                                                <source srcset="./img/product-images/monstera.webp" type="image/webp">
+                                                                
+                                                <img class="best__img" src="./img/product-images/monstera.png" loading="lazy">
+                                            </picture>
+                                            <div class="best__info">
+                                                <p> <b>Monstera</b> also relies on C3 photosynthesis. Its large, perforated leaves increase light capture and improve air circulation, supporting efficient gas exchange. Monstera’s high humidity requirement is linked to C3 photosynthesis: in hot, dry conditions, the RuBisCO enzyme can “mistake” oxygen for CO₂, triggering photorespiration and reducing efficiency. Maintaining high humidity helps minimize this effect and keeps photosynthesis productive.</p>
+                                                <div class="best__info-btns">
+                                                    <a href="#Monstera" class="best__info-explore button button--wide">Show... </a>
+                                                    <div class="best__info-nav">
+                                                        <div class="best__info-prev" data-js-slider-previous-button>
+                                                           
+                                                        </div>
+                                                        <div class="best__info-next" data-js-slider-next-button>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                   </div>
+                                </div>
+                                 <div class="swiper-slide">
+                                   <div class="best__slide transp-background">
+                                            <picture>
+                                                <source srcset="./img/product-images/banana-palm-tree.webp" type="image/webp">
+                                                                
+                                                <img class="best__img" src="./img/product-images/banana-palm-tree.png" loading="lazy">
+                                            </picture>
+                                            <div class="best__info">
+                                                <p><b>Banana palm tree</b> follows the C3 photosynthesis pathway as well. With its extensive leaf surface, it’s capable of intense photosynthesis when provided with sufficient light and moisture. However, in typical indoor settings, the plant often lacks enough light and warmth, so its actual photosynthetic rate tends to be lower than its potential. To maximize productivity, it needs near‑tropical conditions: abundant light, warmth, and consistently moist soil.</p>
+                                                <div class="best__info-btns">
+                                                    <a href="#Banana-palm-tree" class="best__info-explore button button--wide">Show... </a>
+                                                    <div class="best__info-nav">
+                                                        <div class="best__info-prev" data-js-slider-previous-button>
+                                                            
+                                                        </div>
+                                                        <div class="best__info-next" data-js-slider-next-button>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                   </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="swiper-pagination-2" data-js-slider-pagination></div>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__top">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <img src="./img/logo-footer.png" alt="">
+                        Planto.
+                    </div>
+                    <p>
+                        Bring nature home with our carefully selected plants. Сreate the perfect indoor garden or find the ideal gift for any plant lover.
+                    </p>
+                </div>
+              
+                <div class="footer__column">
+                    <div class="footer__column-title">For Every Update.</div>
+                    <form class="footer__email">
+                        <input class="footer__email-input" placeholder="Enter Email" type="email">
+                        <button class="footer__email-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__cpr">
+                planto © all right reserve
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

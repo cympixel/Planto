@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+.stars{
+    display: flex;
+    gap: rem(9);
+}
+.star{
+    display: flex;
+    width: rem(15);
+    height: rem(15);
+
+    background-image: url(../img/star.svg);
+    background-repeat: no-repeat;
+
+    &-half{
+        background-image: url(../img/half-star.svg);
+    }
+}

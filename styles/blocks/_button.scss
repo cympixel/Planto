@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.button{
+    padding: rem(15) ;
+    border: var(--border-white);
+    border-radius: rem(12);
+    font-size: fluid(28, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;
+    background-color: transparent;
+
+    &--wide{
+        padding: rem(15) rem(59);
+
+        @include tablet{
+        padding: rem(7) rem(20);
+        }
+    }
+
+    @include tablet{
+        padding: rem(7) ;
+    }
+
+    &:hover{
+        background-color: var(--color-white-background);
+    }
+}

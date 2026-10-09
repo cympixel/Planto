@@ -1,0 +1,120 @@
+@use '../helpers' as *;
+
+.footer{  
+    &__inner{
+        padding: rem(90) rem(38) rem(90) rem(62);
+
+        @include tablet{
+            padding: rem(30) rem(38) rem(40) rem(52);
+        }
+    }
+    &__top{
+        display: grid;
+        gap: rem(160);
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        padding-bottom: rem(90);
+
+        @include laptop{
+            grid-template-columns: auto;
+             gap: rem(50);
+              padding-bottom: rem(60);
+        }
+    }
+    &__column{
+        max-width: rem(550);
+        display: grid;
+        gap: rem(46);
+
+        @include tablet{
+            gap: rem(23);
+        }
+
+        &-title{
+            font-size: fluid(28,20);
+            font-weight: 900;
+        }
+    }
+    &__logo{
+        font-weight: 1000;
+        font-size: fluid(58, 30);
+        color: var(--color-white-transparent);
+
+        display: flex;
+        gap: rem(13);
+        align-items: end;
+    }
+    &__menu{
+        &-list{
+            display: grid;
+            gap: rem(26);
+        }
+        &-link{
+            position: relative;
+            
+            &:hover{
+            color: var(--color-white-transparent);
+            }
+        
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: rem(2);
+                background-color: var(--color-white);
+                bottom: -4px;
+                left: 0;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform 0.3s ease-in-out;
+            }
+             &:hover::before{
+                transform-origin: left;
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &__email{
+        position: relative;
+        
+        &-input{
+            width: 100%;
+            padding: rem(22) rem(29);
+            background-color:transparent;
+            border: 2px solid var(--color-white);
+            border-radius: rem(8);
+            color: var(--color-white);
+
+            &::placeholder{
+                color: var(--color-white-transparent);
+                font-family: inherit;
+                font-weight: 500;
+            }   
+        }
+        &-btn{
+            position: absolute;
+            padding: rem(18) rem(20);
+            right: 4px;
+            top: 4px;
+            background-color: var(--color-white);
+            color: #000;
+            border-radius: rem(8);
+            font-weight: 700;
+            font-size: rem(22);
+            text-transform: uppercase;
+            font-family: inherit;
+
+            &:hover{
+                background-color: #afa8a8;
+            }
+
+            @include laptop{
+                 padding: rem(15) rem(18);
+                 top: 4.5px;
+                  font-size: rem(15);
+            }
+        }
+    }
+
+}

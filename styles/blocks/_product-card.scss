@@ -1,0 +1,76 @@
+@use '../helpers' as *;
+ 
+.product-card{
+        --img-ratio: 6 / 5;   
+        --img-lift: 20%;  
+
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: rem(20);
+        border: solid 2px rgba(255, 255, 255, 0.05);
+        border-radius: rem(77);
+        position: relative;
+        padding: 0 0 rem(20);
+        color: var(--color-white-transparent);
+
+        @include PC{
+            --img-lift: 10%; 
+        }
+        
+        @include laptop{
+            gap: rem(10);   
+        }
+        
+        &__img{            
+            margin-top: calc(var(--img-lift) * -1);
+            aspect-ratio: var(--img-ratio);
+            object-fit: contain;
+            object-position: center bottom;    
+
+        }
+   
+        
+        &__info{
+            display: grid;
+            gap: rem(20);
+            grid-template-rows: repeat(3, 1fr);
+            height: 100%;
+            
+            margin-inline: rem(33);
+            @include laptop{
+                margin-inline: rem(23);
+            }
+            
+            h3{
+                font-weight: 600;
+            }
+        }
+            
+
+        &__button-next{
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        &__bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: rem(70);
+        }
+
+        &__price{
+            font-size: fluid(38, 22);
+        }
+        
+
+        &--slider{
+            h3{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color:  var(--color-white);
+            }
+        }
+}

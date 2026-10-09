@@ -1,0 +1,163 @@
+@use '../helpers' as *;
+
+.select {
+    --selectButtonArrowIconUrl:url('../img/arrow-down__grey.svg');
+    --selectButtonArrowIconSize:#{fluid(24, 20)};
+    --selectButtonGapX:#{fluid(6,4)};
+    --selectButtonPaddingX:#{fluid(15, 10)};
+
+    flex-shrink: 0;
+
+    &__original-control,
+    &__button{
+        min-width: 60px;
+    }
+
+
+    &__original-control{
+        appearance: none;
+        padding-left: var(--selectButtonPaddingX);
+        padding-right: calc(var(--selectButtonArrowIconSize) + 
+            var(--selectButtonPaddingX));
+        background-image: var(--selectButtonArrowIconUrl);
+        background-position: calc(100% - var(--selectButtonPaddingX)) 50%;
+        background-size: var(--selectButtonArrowIconSize);
+        background-repeat: no-repeat;
+        background-color: transparent;
+        color: var(--color-white);
+        border: none;
+
+        
+
+        @include mobile-above{
+                position: absolute !important;
+                width: 1px !important;
+                height: 1px !important;
+                margin: -1px !important;
+                border: 0 !important;
+                padding: 0 !important;
+                white-space: nowrap !important;
+                clip-path: inset(100%) !important;
+                clip: rect(0 0 0 0) !important;
+                overflow: hidden !important;
+            }
+
+        &:disabled{
+            & + .select__body{
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+
+            * {
+                pointer-events: none;
+            }
+        }
+    }
+    &__body{
+        position: relative;
+    }
+
+    &__button,
+    &__option{
+        user-select: none;
+        cursor: pointer;
+
+        *{
+            pointer-events:none ;
+        }
+    }
+
+    &__button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: var(--selectButtonGapX);
+        padding-inline: var(--selectButtonPaddingX);
+        transition-duration: var(--transition-duration);
+
+        @include mobile{
+                position: absolute !important;
+                width: 1px !important;
+                height: 1px !important;
+                margin: -1px !important;
+                border: 0 !important;
+                padding: 0 !important;
+                white-space: nowrap !important;
+                clip-path: inset(100%) !important;
+                clip: rect(0 0 0 0) !important;
+                overflow: hidden !important;
+            }
+
+        &::after{
+            width:(var(--selectButtonArrowIconSize));
+            height: (var(--selectButtonArrowIconSize));
+
+            content:'';
+            background:var(--selectButtonArrowIconUrl) center/contain no-repeat;
+            transition-duration: inherit;
+        }
+
+        &.is-expanded{
+            &::after{
+                rotate:180deg;
+            }
+        }
+    }
+    &__dropdown{
+        position: absolute;
+        z-index: 100;
+        top: calc(100% + 20px);
+
+        display: grid;
+        row-gap: 4px;
+        min-width: 300px;
+        max-height: 250px;
+        overflow-y: auto;
+        overscroll-behavior: none;
+        padding: 4px;
+        border: var(--border-white);
+        border-radius: rem(20);
+        transition-duration: var(--transition-duration);  
+        left: -10px;
+        transform-origin: 0 0;
+    
+        @include mobile{
+            opacity: 0;
+             visibility: hidden;
+        }
+       
+        
+
+        &:not(.is-expanded){
+            opacity: 0;
+            visibility: hidden;
+            scale: 0;
+        }
+    }
+    &__option{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(10);
+        border: var(--border-white);  
+        border-radius: inherit;
+
+        @include hover{   
+            border-color: var(--color-white-background);
+        }
+
+        &.is-current{
+            border-color: var(--color-white-background);
+        }
+        &.is-selected{
+            border-color: var(--color-white-background);
+            background-color: var(--color-white-background);
+
+            &::after{
+                content: '✓';              
+            }
+        }
+        
+        
+    }
+}
