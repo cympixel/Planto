@@ -1,0 +1,122 @@
+@use '../helpers' as *;
+
+.cart{  
+    position: relative;
+    color: var(--color-white);
+    font-weight: 600;
+
+    &.is-open .cart__panel {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(rem(5)); 
+    }
+
+    &__button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 5px;
+        border-radius: 0 rem(8);
+        transition-duration: var(--transition-duration);
+        
+        @include hover{
+            background: rgba(255, 255, 255, 0.103);;
+            backdrop-filter: blur(40px);           
+        }
+        .cart.is-open &{
+            background: rgba(255, 255, 255, 0.103);
+            backdrop-filter: blur(40px);
+        }
+        
+    }
+    &__panel{
+        position: absolute;
+        top: calc(100% + 15px); 
+        right: 0;
+        width: fluid(400, 300);
+        background: rgba(255, 255, 255, 0.103);;
+        backdrop-filter: blur(40px);
+        border-radius:rem(8) 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.205);
+        padding: 15px;
+            
+
+        display: grid;
+        gap: 15px;
+    
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px); 
+        
+        
+        transition-duration: var(--transition-duration);
+        z-index: 100;
+
+
+        @include tablet{
+            top: calc(100% + 6px); 
+        }
+    }
+    &__list{
+        display: grid;
+        gap: 20px;
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: 1fr auto rem(60);
+        
+        &-price{
+            text-align: end;
+        }
+    } 
+    &__clear-btn{
+        justify-self: end;
+        padding: rem(7) rem(15);
+        border: var(--border-white);
+        font-size: fluid(22, 12);
+        background-color: transparent;
+        color: var(--color-white-transparent);
+
+        &:hover{
+            background-color: var(--color-white-background);
+        }
+    }
+    &__total{
+        display: grid;
+        gap: 5px;
+
+    }
+    &__counter{
+        pointer-events: none;
+        position: absolute;
+        right: rem(-5);
+        top: rem(-10);
+        font-size: 12px;
+        padding: 1px 4px;
+        background-color: var(--color-white-background);
+        border-radius: 50%;
+        z-index: 40;
+    }
+    &__checkout{    
+        padding: rem(5) rem(10) rem(5) rem(8);
+        border: var(--border-white);
+        border-radius: rem(12);
+        border-radius: 6px;
+        font-size: fluid(28, 20);
+        background-color: transparent;
+        color: inherit;
+        font-weight: 500;
+
+        &:hover{
+            background-color: var(--color-white-background);
+        }
+    
+    }  
+}

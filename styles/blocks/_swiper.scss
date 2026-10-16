@@ -1,0 +1,47 @@
+@use '../helpers' as *;
+
+.swiper{
+    overflow: visible;
+    position: relative;
+    
+    @include mobile-s{
+        padding-inline: var(--container-padding-x);
+        width:rem(300);
+    }
+}
+
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: rem(42);
+    
+}
+.swiper-pagination-bullet{
+    background-color: #ffff;
+    transition-duration: var(--transition-duration);
+}
+.swiper-pagination-bullet-active{
+    width: rem(21);
+    border-radius: rem(12);
+}
+
+.swiper-2{   
+    position: relative;
+}
+.swiper-2 .swiper-slide {
+  height: auto;      
+  display: flex;      
+}
+
+.swiper-pagination-2.swiper-pagination-bullets.swiper-pagination-horizontal{
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 25px;
+
+}

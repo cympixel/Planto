@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.review{
+
+    &__inner{
+        display: grid;
+        gap: var(--section-inner-gap);
+    }
+
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(33);
+
+        @include tablet{
+            grid-template-columns: auto;
+        }
+    }
+    &__card{
+        display: grid;
+        gap: rem(61);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(40px);
+        padding: rem(91) rem(51) rem(95) rem(58);
+        border-radius: rem(77);
+        
+
+        &-top{
+            display: flex;
+            gap: rem(28);
+            align-items: center;
+            justify-items: center;
+
+            img{
+                width: rem(88);
+                height: rem(88);
+            }
+        }
+        &-name{
+            display: grid;
+            gap: rem(5);
+            font-size: rem(22);
+        }
+
+        &-text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        &-text{
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        &-checkbox{
+            display: none;
+
+            &:checked ~ .review__card-more-btn{
+                display: none;
+            }
+             &:checked ~ .review__card-text{
+                -webkit-line-clamp: unset;
+            }
+        }
+        &-more-btn{
+            color: var(--color-white);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+       
+    }
+}
